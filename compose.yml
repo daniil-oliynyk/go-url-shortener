@@ -2,5 +2,12 @@ services:
   my-redis:
     image: "redis:alpine"
     ports:
-      - "6379:6379"
-    container_name: "my-redis-cache"
+      - "127.0.0.1:6379:6379"
+    container_name: "my-redis"
+  shortener-service:
+    image: "shortener-service"
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      - my-redis
+    container_name: "shortener-service"

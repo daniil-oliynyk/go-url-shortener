@@ -14,7 +14,7 @@ func main() {
 	cfg := config{
 		addr: ":8080",
 		cache: cacheConfig{
-			addr:     ":6379",
+			addr:     "my-redis:6379",
 			password: "",
 		},
 	}

@@ -61,5 +61,14 @@ func (app *application) handleShortUrlRedirect(w http.ResponseWriter, r *http.Re
 		w.Write([]byte("url not found"))
 		return
 	}
+
+	type SuccessResponse struct {
+		LongUrl string
+	}
+	resp := SuccessResponse{longUrl}
+	w.WriteHeader(http.StatusPermanentRedirect)
+	json.NewEncoder(w).Encode(resp)
+
 	http.Redirect(w, r, longUrl, http.StatusFound)
+
 }
