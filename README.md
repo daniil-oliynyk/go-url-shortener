@@ -26,3 +26,8 @@ Response:
 ```
 Or if you put the shortUrl returned from the POST request into your browser youll be redirected accordingly.
 
+## TODO:
+Possibly some stuff to add later on if bored
+* Add environment variable support (pretty straightforward)
+* Add a DB to move stale redis entries
+* Redis Sentinel 
